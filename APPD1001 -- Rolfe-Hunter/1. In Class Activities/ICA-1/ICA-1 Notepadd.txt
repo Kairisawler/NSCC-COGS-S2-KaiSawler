@@ -1,0 +1,60 @@
+APPD 1001 -- ICA-1 -- Kai Sawler & Morgan Sheridan
+
+1.
+	What is User Interface Design & Development?
+	https://www.usability.gov/what-and-why/user-interface-design.html
+	
+	User Interface (Also known as UI) Design consists of the concepts and ideas behind knowing and ensuring end-users can easily and efficiently operate and understand the interface. This includes the storyboarding/designing of a UI, creating prototypes of the UI, and seeking feedback at most stages with multiple potential end-users to ensure maximum performance quality.
+	
+2.
+	Explain the difference between UI and UX.
+	
+	
+3.
+	List five useful Tutorials/Websites for learning User Interface Design & Development:
+	1. https://www.udemy.com/courses/search/?q=User%20Interface&src=ukw
+	2. https://careerfoundry.com/en/courses/become-a-ui-designer?gclid=EAIaIQobChMIjM_9m7_I2AIVBLXACh2PTgdgEAAYAyAAEgIQRvD_BwE
+	3. https://www.lynda.com/Interactive-training-tutorials/93-0.html
+	4. https://www.coursera.org/specializations/user-interface-design
+	5. https://learnui.design/
+	
+	I (Kai) have personally used Lynda, Udemy and Career Foundry, and found all three to be great resources.
+	
+4. 
+	What are the different categories or job titles for User Interface Design & Development?
+	
+	
+5.
+	List the certifications available for User Interface Design & Development Careers:
+	
+	
+6.
+	What tools are available for User Interface Design & Development professionals?
+	http://www.tripwiremagazine.com/user-interface-design-tools/
+	https://ux.walkme.com/5-user-interface-design-tools-must/
+	
+	Adobe Design Suite (Photoshop, and Illustrator), Sketch 3, GitHub (Source Control!), Flinto (iOS), ForeUI, LivePipe UI, DesignerVista and Napkee are all very similar programs/tools that can be easily used for creating various simple and effective User Interfaces. Other tools include 'iPhone Mockup', 'Android Asset Studio', 'MockFlow', as well as regular development tools such as Notepad++, mobile devices/tablets and personal computers.
+	
+7.
+	List the people skills required for User Interface Design & Development jobs:
+	
+	
+8.
+	What formal training is available or required for User Interface Design & Development jobs?
+	https://ca.indeed.com/User-Interface-Designer-jobs-in-Toronto,-ON
+	
+	
+	Based on various ads for UID&D careers and jobs across the Internet, I've found the following skills and.or courses to be requirements/boons for the industry:
+		1. University Degree or Certification in User Experience-related field
+		2. 3+ years of UI/UE experience, 5+ preferred.
+		3. Proficiencies in HTML5 & CSS
+		4. Experience in Adobe Creative Suite (Illustrator & Photoshop)
+		
+	As such, I'd look for University BCS in Computer Sciences, with specialization in UI/UE; Courses/Certifications in Adobe Creative Suite, Photoshop, or other high-level digital designing tools; and courses in HTML5 and CSS basics. Most of these courses (especially at colleges like NSCC!) can take 6-12 months worth of related courses, as well as work placements can help get the required/recommended experience in the industry.
+	
+9.
+	What is the salary range for User Interface Design & Development jobs?
+	https://www.payscale.com/research/CA/Job=User_Interface_Designer/Salary
+	https://www.glassdoor.ca/Salaries/user-interface-designer-salary-SRCH_KO0,23.htm
+	
+	From initial research, the average (median) yearly salary for UI Designers/Developers is $52,033 CAD; with the average range being between 46,000 CAD and 65,000 CAD. The general range is between $38,710 CAD and $80,403 CAD for most linked jobs.

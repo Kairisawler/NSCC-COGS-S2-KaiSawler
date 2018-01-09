@@ -1,0 +1,71 @@
+UNIX Commands:
+
+	~ 	usr directory
+	$	Awaiting Input
+
+	pwd
+		Print Working Directory
+			-$ pwd
+			-> /home/student
+
+	cd
+		Change Directory
+			-$ cd /bin
+			-> /usr/bin$ 
+
+	PS1
+		Change Prompt message
+			-$ PS1="Command? "
+	  Command? 
+
+	ls
+		List files in directory
+			-$ ls
+			-> Desktop  Downloads  Music  Public...
+			
+		Full (long) Description
+			-$ ls -l
+			-> drwxr-xr-x 2  student student 4096 Sep 19 18:03 Desktop
+			-> ...
+
+	df
+		File Systems, and sizes
+			-$ df
+			-> Filesystem  1K-blocks  Used  Available  Use%
+			-> udev        1516988       0    1516988     0%
+			-> ...
+		
+		File Systems, and sizes, Clean View
+			-$ df -h
+			-> Filesystem size used
+			-> udev       1.5G    0
+			-> ...
+
+	!!
+		Repeat last command
+			-$ !!
+			-> 
+
+	xterm
+		Creates New Terminal
+			-$ xterm
+			-> 
+
+		Create New Terminal in Background
+			-$ xterm &
+			-> [1] 3896
+
+	ps
+		Display Primary Processes
+			-$ ps
+			-> PID	TTY		TIME		CMD
+			-> 3982	pts/4	00:00:00	bash
+			-> ...
+		
+		Display All Processes w/ Detail
+			-$ ps -ef
+			-> UID	PID	PPID	C	...
+			-> root	1	0		0	...
+			-> ...
+
+	

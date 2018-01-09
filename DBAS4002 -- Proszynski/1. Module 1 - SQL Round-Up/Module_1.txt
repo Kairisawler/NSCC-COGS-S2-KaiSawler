@@ -1,0 +1,48 @@
+Q1. 
+	Select Devel.DFN, Devel.DLN
+	From PIOTR.Devel
+
+	Where Devel.D# not in (Select Knows.D# From PIOTR.Knows)
+	;
+
+
+Q2.
+	Select Lang.L#, Lang.LN
+	From PIOTR.Lang
+
+	Where Lang.L# not in (Select Requires.L# From PIOTR.Requires)
+	;
+
+
+Qa.
+	Select Distinct(Project.PN), Project.PLOC
+	From PIOTR.Project, PIOTR.Requires, PIOTR.Knows, PIOTR.Devel
+
+	Where lower(Project.PLOC) = 'greenwood' OR lower(Project.PLOC) = 'kingston' AND
+	Project.P# in Requires.P# AND
+	Requires.L# in Knows.L# AND
+	Knows.D# in Devel.D# AND
+	Devel.DLN = 'Proszynski'
+	;
+
+
+Qb.
+	Select Distinct(Lang.LN)
+	From PIOTR.Lang, PIOTR.Requires
+
+	Where Lang.L# in Requires.L#
+	;
+
+
+Qc.
+	Select Devel.DFN, Devel.DLN, sum(Works_In.PAY)
+From PIOTR.Devel, PIOTR.Works_In
+
+PIOTR.Devel on PIOTR.Works_In.D# = Devel.D#
+Group By Devel.DFN, Devel.DLN
+Having Devel.D# = Works_In.D#
+;
+NOT DONE!?
+}!#%!@%!@%!
+@$!
+@%!@%^!

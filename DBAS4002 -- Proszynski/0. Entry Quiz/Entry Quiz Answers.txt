@@ -1,0 +1,35 @@
+Skill Test:
+
+
+1.
+	Select Beer.BN, Beer.ORIG
+	From PIOTR.Beer
+
+	Where Beer.Orig like '%land%'
+	;
+
+	Select Emp.Ename, Emp.Sal
+	From SCOTT.EMP
+
+	Where EMP.Hiredate < ('1982-01-01')
+	;
+
+
+2.
+	Select Beer.Orig, Count(B#)
+	From PIOTR.Beer
+
+	Group by Beer.Orig
+	;
+
+
+3.
+	Select Emp.Ename
+	From SCOTT.Emp
+
+	Where MGR is NULL
+	;
+
+
+4.
+	
