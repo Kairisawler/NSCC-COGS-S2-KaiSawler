@@ -1,20 +1,27 @@
-Q1. 
+Q1.
+	-- Q1) Find developers that don't know any programming languages.
+	
 	Select Devel.DFN, Devel.DLN
 	From PIOTR.Devel
 
 	Where Devel.D# not in (Select Knows.D# From PIOTR.Knows)
 	;
-
-
+-----------------------------------------------------------------
+-----------------------------------------------------------------
 Q2.
+	-- Q2) Find a language that is not used in any of our projects.
+	
 	Select Lang.L#, Lang.LN
 	From PIOTR.Lang
 
 	Where Lang.L# not in (Select Requires.L# From PIOTR.Requires)
 	;
-
-
+-----------------------------------------------------------------
+-----------------------------------------------------------------
 Qa.
+	-- Qa) find projects in Kingston or Greenwood that require some
+	-- languages that Piotr Proszynski knows.
+	
 	Select Distinct(Project.PN), Project.PLOC
 	From PIOTR.Project, PIOTR.Requires, PIOTR.Knows, PIOTR.Devel
 
@@ -22,27 +29,84 @@ Qa.
 	Project.P# in Requires.P# AND
 	Requires.L# in Knows.L# AND
 	Knows.D# in Devel.D# AND
-	Devel.DLN = 'Proszynski'
+	lower(Devel.DLN) = 'proszynski'
 	;
-
-
+-----------------------------------------------------------------
+-----------------------------------------------------------------
 Qb.
+	-- Qb) find how many different languages are needed in all our projects.
+	
 	Select Distinct(Lang.LN)
 	From PIOTR.Lang, PIOTR.Requires
 
 	Where Lang.L# in Requires.L#
 	;
-
-
+-----------------------------------------------------------------
+-----------------------------------------------------------------
 Qc.
-	Select Devel.DFN, Devel.DLN, sum(Works_In.PAY)
-From PIOTR.Devel, PIOTR.Works_In
 
-PIOTR.Devel on PIOTR.Works_In.D# = Devel.D#
-Group By Devel.DFN, Devel.DLN
-Having Devel.D# = Works_In.D#
+	-- Qc) list developers (full names) together
+	-- with their total earnings
+
+	Select Devel.DFN, Devel.DLN, sum(Works_In.PAY)
+	From PIOTR.Devel, PIOTR.Works_In
+
+	Where Works_In.D# in Devel.D#
+	Group By Devel.DFN, Devel.DLN
+	;
+-----------------------------------------------------------------
+-----------------------------------------------------------------	
+Qd.
+	-- Qd) print the names of the projects that require more then
+	-- 2 programming languages, together with the number of
+	-- languages needed.
+
+	Select Project.PN, Count(Lang.L#)
+	From PIOTR.Project, PIOTR.Requires, PIOTR.Lang
+
+	Where Requires.P# In Project.P# AND
+	Requires.L# in Lang.L#
+	Group By Project.PN
+	Having Count(Lang.L#) > 2
+	Order By Count(Lang.L#) Desc
+	;
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+Qe.
+	-- Qe) name projects that use only local developers (i.e. those who
+	-- live at the same place as the project location)
+
+	Select Distinct(Project.PN)
+	From PIOTR.Project, PIOTR.Devel, PIOTR.Works_In
+
+	Where Project.P# = Works_In.P# AND
+	Works_In.D# = Devel.D# AND
+	lower(Devel.HOME) = lower(Project.PLOC)
+
+	MINUS
+
+	Select Distinct(Project.PN)
+	From PIOTR.Project, PIOTR.Devel, PIOTR.Works_in
+
+	Where Project.P# = Works_In.P# AND
+	Works_In.D# = Devel.D# AND
+	lower(Devel.HOME) != lower(Project.PLOC)
+	;
+	
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+-- BQa). USELESS DEVELOPERS
+-- List developers that work ONLY in those projects that
+-- require ONLY languages they don't know.
+
+Select Distinct(Devel.DFN), Devel.DLN
+From PIOTR.Devel, PIOTR.Knows, PIOTR.Project,
+PIOTR.Works_In, PIOTR.Requires, PIOTR.Lang
+
+Where Works_In.D# in Devel.D# AND
+Devel.D# in Knows.D# AND
+Works_In.P# in Project.P# AND
+Project.P# in Requires.P# AND
+Requires.L# in Lang.L#
 ;
-NOT DONE!?
-}!#%!@%!@%!
-@$!
-@%!@%^!
